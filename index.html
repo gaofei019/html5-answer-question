@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>集卡召唤学神</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="Expires" content="0" />
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta name="viewport" content="width=device-width,target-densitydpi=medium-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="Shortcut Icon" href="http://cdn3.saikr.com/img/favicon.ico?v=201608052330">
+        <link rel="stylesheet" type="text/css" href="./css/topic/school/index.min.css">
+        <link rel="stylesheet" type="text/css" href="http://cdnstaticm.saikr.com/pace-master/templates/pace-theme-center-circle.tmpl.min.css?v=201608052330">
+        <script src="http://cdnstaticm.saikr.com/pace-master/pace.min.js?v=201608052330"></script>
+        <script>
+            Pace.on('hide', function(){
+              document.querySelector('#scIndexWrap').classList.add('show');
+            });
+        </script>
+    </head>
+    <body>
+        <div class="sc-wrap">
+            <img src="./img/topic/school/weixin_share_icon.jpg">
+        </div>
+        <a href="javascript:;" class="sc-music-btn" id="scMusicBtn"></a>
+        <audio id="audio" src="http://cdnstaticm.saikr.com/music/green_day.mp3?v=201608052330"  loop="loop" ></audio>
+        <!-- 首页 -->
+        <div class="sc-wrap sc-wrap-1 js_sc_wrap" id="scIndexWrap">
+            <div class="con">
+                <span class="text-bg text-summon"></span>
+                <span class="text-bg text-curve-wrecker"></span>
+                <div class="title-border">
+                    <div class="title-zhao"></div>
+                    <div class="title-huan"></div>
+                    <div class="title-xue"></div>
+                    <div class="title-shen"></div>
+                </div>
+                <div class="tip">
+                    答题收集四张老K,<br>即可召唤清华、中科院等学神
+                </div>
+                <a href="javascript:;" class="btn" id="scStartBtn"></a>
+            </div>
+        </div>
+        <!-- 答题错误提示 -->
+        <div class="sc-wrap sc-wrap-2 js_sc_wrap" id="scWrongTipWrap">
+            <div class="con q-con">
+                <div class="sc-wrong-tip">很遗憾，回答错误~~</div>
+                <a href="javascript:;" class="btn sc-re-play-btn" id="scRePlayBtn"></a>
+            </div>
+        </div>
+        <!-- 问题4前的提示 -->
+        <div class="sc-wrap sc-wrap-3 js_sc_wrap" id="scContinueWrap">
+        </div>
+        <!-- 问题4前的提示模板-->
+        <div id="scContinueTpl" style="display:none">
+            <div class="con">
+                <div class="sc-faguang-box"></div>
+                <div class="sc-card-box">
+                    <i class="sc-k-icon {t}"></i>
+                    <i class="sc-k-icon {t}"></i>
+                    <div class="sc-head-img-box"></div>
+                    <div class="sc-xueshen-info">{i}</div>
+                </div>
+                <a href="javascript:;" class="btn sc-continue-btn js_continue_btn"></a>
+                <div class="sc-forward-tip">
+                    答对下一题将获得{ct}K并解锁这位神秘学神
+                </div>
+            </div>
+        </div>
+        <!-- 回答正确提示 -->
+        <div class="sc-wrap sc-wrap-2 js_sc_wrap" id="scSuccessWrap"></div>
+        <!-- 回答正确提示模板 -->
+        <div id="scSuccessTpl" style="display:none">
+            <div class="con q-con">
+                <div class="sc-success-tip">
+                    <div class="sc-faguang-box"></div>
+                    <div class="sc-card-box crown {t}">
+                        <i class="sc-k-icon {t}"></i>
+                        <i class="sc-k-icon {t}"></i>
+                    </div>
+                    <div class="tip-txt">
+                        恭喜您，回答正确！
+                    </div>
+                    <div class="tip-txt">
+                        获得{ct}K并解锁一个学神
+                    </div>
+                </div>
+                <a href="javascript:;" class="btn sc-continue-btn js_continue_btn"></a>
+                <div class="sc-forward-tip">
+                    还差 {i} 张
+                </div>
+            </div>
+        </div>
+        <!-- 通关成功提示 -->
+        <div class="sc-wrap sc-wrap-2 js_sc_wrap" id="scFullSuccessWrap">
+            <div class="con q-con">
+                <div class="sc-success-tip passed">
+                    <div class="sc-faguang-box"></div>
+                    <a href="javascript:;" class="sc-card-box crown heitao js_xueshen_card_btn" action-index="3">
+                        <i class="sc-k-icon heitao"></i>
+                        <i class="sc-k-icon heitao"></i>
+                    </a>
+                    <a href="javascript:;" class="sc-card-box crown hongtao js_xueshen_card_btn" action-index="4">
+                        <i class="sc-k-icon hongtao"></i>
+                        <i class="sc-k-icon hongtao"></i>
+                    </a>
+                    <a href="javascript:;" class="sc-card-box crown fangpian js_xueshen_card_btn" action-index="5">
+                        <i class="sc-k-icon fangpian"></i>
+                        <i class="sc-k-icon fangpian"></i>
+                    </a>
+                    <a href="javascript:;" class="sc-card-box crown meihua js_xueshen_card_btn" action-index="6">
+                        <i class="sc-k-icon meihua"></i>
+                        <i class="sc-k-icon meihua"></i>
+                    </a>
+                    <div class="tip-txt">
+                        点击您想揭开的K牌
+                    </div>
+                    <div class="tip-txt">
+                        召唤学神！
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 学神展示过渡 -->
+        <div class="sc-wrap sc-wrap-3 js_sc_wrap" id="scDetailWrap"></div>
+        <!-- 学神展示过渡模板 -->
+        <div id="scDetailTpl" style="display:none">
+            <div class="con">
+                <div class="sc-card-box xueshen">
+                    <i class="sc-k-icon {t}"></i>
+                    <i class="sc-k-icon {t}"></i>
+                    <div class="sc-head-img-box">
+                        <img {a}>
+                    </div>
+                    <div class="sc-xueshen-name">
+                        {n}
+                    </div>
+                    <div class="sc-xueshen-info">
+                        {i}
+                    </div>
+                    <div class="tip">
+                        别眨眼，学神即将出现！
+                    </div>
+                    <div class="tip countdown" id="scCountDown">5</div>
+                </div>
+            </div>
+        </div>
+        <!-- 学神电话接听 -->
+        <div class="sc-wrap sc-xueshen-wrap tel js_sc_wrap" id="scTelWrap">
+            <div class="item-top-box">
+                <img class="item-img js_xueshen_avatar">
+                <div class="item-info">
+                    <div class="item-name js_xueshen_name"></div>
+                    <div class="item-tip">邀请你视频聊天...</div>
+                </div>
+            </div>
+            <div class="item-tixingwo">提醒我</div>
+            <div class="item-message">信息</div>
+            <a href="javascript:;" class="item-btn answer" id="scTelAnswerBtn">接听</a>
+            <audio id="voice" src="http://cdnstaticm.saikr.com/voice/phonering.mp3?v=201608052330"  loop="loop" ></audio>
+        </div>
+        <!-- 学神视频 -->
+        <div class="sc-wrap sc-xueshen-wrap video js_sc_wrap" id="scVideoWrap">
+            <video id="scVideo"></video>
+            <a href="javascript:;" class="item-btn reject" id="scRejectBtn">挂断</a>
+        </div>
+        <!-- 活动结束 -->
+        <div class="sc-wrap sc-end-wrap" id="scEndWrap">
+            <div class="item-top">
+                我用尽洪荒之力<br>集齐了四张K 召唤到了学神
+            </div>
+            <div class="q-con item-con">
+                <img class="item-img js_xueshen_avatar">
+                <div class="item-info">
+                    <div class="item-name js_xueshen_name"></div>
+                    <div class="item-univs js_xueshen_univs"></div>
+                </div>
+            </div>
+            <div class="item-btn-box clearfix">
+                <a href="javascript:;" class="fl item-btn share" id="scShareBtn"></a>
+                <a href="javascript:;" class="fr item-btn repeat" id="scReloadBtn"></a>
+            </div>
+            <img src="./img/topic/school/m_pic.jpg" alt="赛氪M站二维码" class="item-code-img">
+            <div class="item-footer">
+                <div class="item-logo"></div>
+                <div class="item-slogan">大学生竞赛活动社区</div>
+            </div>
+        </div>
+        <!-- 分享浮层 -->
+        <div class="sc-wrap sc-share-mask" id="scShareMask"></div>
+    </body>
+</html>
+<script src="http://cdnstaticm.saikr.com/js/zepto.min.js?v=201608052330"></script>
+<script src="./js/index.min.js"></script>
